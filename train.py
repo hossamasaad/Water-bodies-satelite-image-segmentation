@@ -24,8 +24,8 @@ if __name__ == "__main__":
 
 
     # Data paths
-    images = sorted(glob("/content/Water Bodies Dataset/Images/*.jpg"))
-    masks = sorted(glob("/content/Water Bodies Dataset/Masks/*.jpg"))
+    images = sorted(glob(f"{args.data_path}/Images/*.jpg"))
+    masks = sorted(glob(f"{args.data_path}/Masks/*.jpg"))
 
     data = []
     for image, mask in zip(images, masks):
