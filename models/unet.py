@@ -56,7 +56,7 @@ def decoder(inputs, convs):
     x = decoder_block(x, f2, n_filters=128, dropout_rate=0.3)
     x = decoder_block(x, f1, n_filters=64, dropout_rate=0.3)
 
-    outputs = Conv2D(filters=3, kernel_size=(1, 1), activation='softmax')(x)
+    outputs = Conv2D(filters=1, kernel_size=(1, 1), activation='sigmoid')(x)
 
     return outputs
 

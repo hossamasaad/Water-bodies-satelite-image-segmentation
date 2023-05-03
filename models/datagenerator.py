@@ -1,3 +1,4 @@
+import cv2
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.utils import load_img, img_to_array
@@ -27,6 +28,20 @@ class DataGenerator(tf.keras.utils.Sequence):
         image = image / 255.
         return image
 
+    def __load_mask(self, path, IMAGE_SIZE=256):
+
+        image = load_img(path)
+        image = img_to_array(image)
+        image = image[:,:,0]
+        image = tf.expand_dims(image, axis=2)
+        image = tf.image.resize(image, (IMAGE_SIZE, IMAGE_SIZE))  
+        image = tf.cast(image, tf.float32)
+        _, image = cv2.threshold(np.array(image), 127, 255, cv2.THRESH_BINARY)
+        image = tf.expand_dims(image, axis=2)
+        image = image / 255.
+
+        return image
+
 
     def __data_generation(self, indexes):
 
@@ -35,7 +50,7 @@ class DataGenerator(tf.keras.utils.Sequence):
         for idx in indexes:
             image_path, mask_path = self.data[idx]
             image = self.__load_img(image_path)
-            mask = self.__load_img(mask_path)
+            mask = self.__load_mask(mask_path)
             images.append(image)
             masks.append(mask)
 
