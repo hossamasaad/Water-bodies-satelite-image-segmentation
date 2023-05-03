@@ -31,13 +31,13 @@ A collection of water bodies images captured by the Sentinel-2 Satellite. Each i
 ![DeepLab](assets/deeplab.png)
 
 ## Results
-|Model|Loss|epochs|
-|--|--|--|
-|U-Net|-|-|
-|FCN-8|-|-|
-|SegNet|-|-|
-|ShelfNet|-|-|
-|DeepLabv3|-|-|
+|Model|Loss (binary cross entropy)|Dice|iou|epochs|
+|--|--|--|--|--|
+|U-Net|-|-|-|-|
+|FCN-8|-|-|-|-|
+|SegNet|-|-|-|-|
+|ShelfNet|-|-|-|-|
+|DeepLabv3|-|-|-|-|
 
 ## Project Structure
 
