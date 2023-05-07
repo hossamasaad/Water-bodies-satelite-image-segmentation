@@ -91,7 +91,7 @@ def conv_stride(inputs, n_filters):
 
 def ShelfNet():
     # Inputs
-    inputs = Input(shape=(224, 224, 3,))
+    inputs = Input(shape=(256, 256, 3,))
 
     # Backbone
     b1, b2, b3, b4 = ResNet18_backbone(inputs)
