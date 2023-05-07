@@ -3,11 +3,13 @@ import tensorflow as tf
 
 from glob import glob
 from utils import ShowProgress, save_model
-from models import Unet, DataGenerator
+from models import Unet, FCN8, ShelfNet, DataGenerator, iou_loss, dice_loss
 
 
 MODELS = {
-    "unet": Unet()
+    "unet": Unet(),
+    "fcn": FCN8(),
+    # "shelfnet": ShelfNet(),
 }
 
 
@@ -40,7 +42,8 @@ if __name__ == "__main__":
     # Compile the model
     model.compile(
         loss="binary_crossentropy",
-        optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3)
+        optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
+        metrics=[iou_loss, dice_loss]
     )
 
     # Train the model

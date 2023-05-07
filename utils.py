@@ -20,7 +20,7 @@ def save_model(model, save_path):
         model (keras.Model): model to save
         save_path (str): path to save model
     """
-    with open(save_path) as file:
+    with open(save_path, "wb") as file:
         pickle.dump(model, file)
 
 
