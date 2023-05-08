@@ -33,8 +33,8 @@ A collection of water bodies images captured by the Sentinel-2 Satellite. Each i
 ## Results
 |Model|Loss (binary cross entropy)|Dice|iou|epochs|
 |--|--|--|--|--|
-|U-Net|0.3040|0.5649|0.7205|50|
-|FCN-8|-|-|-|-|
+|U-Net|0.3040|0.7205|0.5649|50|
+|FCN-8|0.3683|0.5725|0.4013|50|
 |SegNet|-|-|-|-|
 |ShelfNet|-|-|-|-|
 |DeepLabv3|-|-|-|-|
