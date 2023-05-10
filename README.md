@@ -40,6 +40,36 @@ $ python train.py --model <model_name> --epochs <num_epochs> --data_path <data_p
 
 ## Project Structure
 
+```
+.
+├── app
+│   ├── frontend.py
+│   ├── segmenter.py
+│   ├── result_images
+│   └── saved_images
+├── assets
+│   ├── deeplab.png
+│   ├── fcn.jpg
+|   └── ....
+├── data
+│   └── Water Bodies Dataset
+│       ├── Images
+│       └── Masks
+├── models
+│   ├── __init__.py
+│   ├── metrics.py
+│   ├── datagenerator.py
+│   ├── deeplab.py
+│   ├── fcn.py
+│   └── unet.py
+├── saved_models
+│   └── unet.pkl
+├── train.py
+├── utils.py
+├── predict.py
+├── README.md
+└── requirements.txt
+```
 
 ## Tools
 - Python
