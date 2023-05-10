@@ -90,7 +90,7 @@ if __name__ == "__main__":
 
     model = load_model(MODEL_PATH)
     
-    cap = cv2.VideoCapture("/content/island.mp4")
+    cap = cv2.VideoCapture("/island.mp4")
 
     frames = []
     _, image = cap.read()

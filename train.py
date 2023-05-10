@@ -3,12 +3,13 @@ import tensorflow as tf
 
 from glob import glob
 from utils import ShowProgress, save_model
-from models import Unet, FCN8, ShelfNet, DataGenerator, iou_loss, dice_loss
+from models import Unet, FCN8, DeepLab, DataGenerator, iou_loss, dice_loss
 
 
 MODELS = {
     "unet": Unet(),
     "fcn": FCN8(),
+    "deeplab": DeepLab()
     # "shelfnet": ShelfNet(),
 }
 
